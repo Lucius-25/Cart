@@ -1,0 +1,5 @@
+export const app = document.querySelector("#app")
+export const selectBtn = app.querySelector("#selectBtn")
+export const cartBtn = app.querySelector("#cartBtn")
+export const categoryLists = app.querySelector("#categoryLists")
+export const productSection = app.querySelector("#productSection")
