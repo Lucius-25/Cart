@@ -1,7 +1,9 @@
+import { cartObserver } from "./app/cart";
 import { categoryRender } from "./app/category";
 import { productRender } from "./app/product";
-import { products } from "./core/variable";
-import { categories } from "./core/variable";
+import { cartBtnHandler} from "./core/handler";
+import { cartBtn, closeCart } from "./core/selector";
+import { categories, products } from "./core/variable";
 
 export class Shop {
     preRender(){
@@ -10,13 +12,18 @@ export class Shop {
     }
 
     listener(){
+        cartBtn.addEventListener("click", cartBtnHandler)
+        closeCart.addEventListener("click", cartBtnHandler)
+    }
 
+    observer(){
+        cartObserver();
     }
 
     init(){
         console.log("Shop Works");
+        this.observer()
         this.preRender()
         this.listener()
     }
-
 }

@@ -1,4 +1,4 @@
-export const products = [
+export const products = 
   [
     {
       id: 1,
@@ -206,9 +206,9 @@ export const products = [
       image: "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
       rating: { rate: 3.6, count: 145 },
     },
-  ],
-];
-
+  ]
+;
+// foreEach
 export const categories = [
   "electronics",
   "jewelery",

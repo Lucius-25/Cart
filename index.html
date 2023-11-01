@@ -8,7 +8,6 @@
   </head>
   <body>
     <main id="app">
-
       <header
         class="w-full fixed z-50 md:w-4/5 px-3 left-0 right-0 md:px-0 mx-auto py-4 flex justify-between border-b-4 border-neutral-700 bg-white"
       >
@@ -33,7 +32,10 @@
               />
             </svg>
           </button>
-          <button id="cartBtn" class="border border-neutral-700 p-3 bg-neutral-700">
+          <button
+            id="cartBtn"
+            class="border border-neutral-700 p-3 bg-neutral-700 relative"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -48,6 +50,7 @@
                 d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
               />
             </svg>
+            <span class="bg-red-600 translate-x-1/2 px-1 -translate-y-1/2 rounded-full w-6 h-6 border-2 border-white top-0 right-0 absolute text-white text-[10px] flex justify-center items-center" id="cartBtnCount">0</span>
           </button>
         </div>
       </header>
@@ -61,8 +64,67 @@
           </div>
         </section>
 
-        <section id="productSection" class="mb-10 grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <section
+          id="cartUi"
+          class="bg-white w-[380px]  h-screen here d top-0 fixed right-0 border-neutral-700 border-s-2 z-50"
+        >
+          <div class="h-full flex flex-col">
+            <div
+              class="cart-header px-3 py-4 flex justify-between border-b-4 border-neutral-700 bg-white"
+            >
+              <div class="brand font-heading">
+                <h1 class="font-bold text-2xl">Shopping Cart</h1>
+                <p class="text-neutral-400">Your Items : <span id="cartCount" class="bg-red-600  px-2 py-1 rounded text-white text-[10px]">
+                  0
+                </span></p>
+              </div>
+              <button class="border border-neutral-700 p-3" id="closeCart">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 stroke-neutral-700 stroke-1"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div id="cartItems" class="cart-items flex-grow p-4">
+              <div
+                class="h-full flex-col last:flex hidden justify-center items-center"
+              >
+                <img class="w-3/4" src="./public/empty-cart.png" alt="" />
+                <p class="font-bold text-lg font-mono">
+                  There is no item yet !
+                </p>
+              </div>
+
+
+            </div>
+            <div
+              class="cart-footer px-3 py-4 flex flex-col border-t-4 border-neutral-700 bg-white font-bold"
+            >
+              <div class="mb-4 text-end">
+                <p class="text-neutral-400">Total Amount</p>
+                <p class="text-3xl">$ <span id="cartTotalAmount">0</span></p>
+              </div>
+              <button class="block w-full bg-neutral-700 text-white py-3">
+                Order Now
+              </button>
+            </div>
+          </div>
         </section>
+
+        <section
+          id="productSection"
+          class="mb-10 grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        ></section>
         <footer
           class="flex justify-between items-center p-3 bg-neutral-700 text-white"
         >
@@ -88,7 +150,6 @@
           </button>
         </footer>
       </div>
-      
     </main>
     <script type="module" src="./main.js"></script>
   </body>
